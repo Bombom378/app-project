@@ -1,0 +1,404 @@
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">My<span>Site</span></h2>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button id="darkBtn">🌙</button>
+            <button class="menu-btn" id="menuBtn">☰</button>
+        </nav>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+            <p class="small-text">WELCOME TO MY WEBSITE</p>
+
+            <h1>Hello, I'm <span>Vincent</span></h1>
+
+            <h2>I'm a <span id="typing"></span></h2>
+
+            <p>
+                I create beautiful and responsive websites using
+                HTML, CSS and JavaScript.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="#contact" class="btn second">Contact Me</a>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <div class="circle">💻</div>
+            <h2>Web Developer</h2>
+            <p>Creative • Simple • Responsive</p>
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section class="section" id="about">
+
+        <h2 class="title">About <span>Me</span></h2>
+
+        <div class="about-box">
+
+            <div class="about-icon">
+                👨‍💻
+            </div>
+
+            <div>
+                <h2>Who Am I?</h2>
+
+                <p>
+                    I am a beginner web developer who enjoys creating
+                    websites and learning new programming skills.
+                    I use HTML to build webpages, CSS to design them,
+                    and JavaScript to make them interactive.
+                </p>
+
+                <button class="btn" onclick="showMessage()">
+                    Learn More
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+
+        <h2 class="title">My <span>Skills</span></h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                <h3>HTML</h3>
+                <div class="progress">
+                    <div class="progress-bar html"></div>
+                </div>
+                <p>90%</p>
+            </div>
+
+            <div class="skill">
+                <h3>CSS</h3>
+                <div class="progress">
+                    <div class="progress-bar css"></div>
+                </div>
+                <p>85%</p>
+            </div>
+
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <div class="progress">
+                    <div class="progress-bar javascript"></div>
+                </div>
+                <p>70%</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+
+        <h2 class="title">My <span>Projects</span></h2>
+
+        <div class="projects">
+
+            <div class="project-card">
+                <div class="project-icon">🛒</div>
+                <h3>Online Store</h3>
+                <p>
+                    A simple shopping website created with
+                    HTML and CSS.
+                </p>
+                <button onclick="project('Online Store')">
+                    View Project
+                </button>
+            </div>
+
+
+            <div class="project-card">
+                <div class="project-icon">🧮</div>
+                <h3>Calculator</h3>
+                <p>
+                    A simple calculator that uses JavaScript
+                    to perform calculations.
+                </p>
+                <button onclick="project1('Calculator')">
+                    View Project
+                </button>
+            </div>
+
+
+            <div class="project-card">
+                <div class="project-icon">❤️</div>
+                <h3>Love Calculator</h3>
+                <p>
+                    An interactive JavaScript project that
+                    calculates a fun compatibility score.
+                </p>
+                <button onclick="project2('Love Calculator')">
+                    View Project
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+
+        <h2 class="title">Contact <span>Me</span></h2>
+
+        <form id="contactForm">
+
+            <input type="text" id="name" placeholder="Your Name">
+
+            <input type="email" id="email" placeholder="Your Email">
+
+            <textarea id="message" placeholder="Your Message"></textarea>
+
+            <button type="submit" class="btn">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <h2>My<span>Site</span></h2>
+
+        <p>© 2026 MySite. All rights reserved.</p>
+
+        <p>Built with HTML • CSS • JavaScript</p>
+    </footer>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Form Events</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 35px;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        input,
+        select,
+        button {
+            height: 55px;
+            font-size: 18px;
+            padding: 0 15px;
+            border: 1px solid #aaa;
+        }
+
+        input {
+            width: 400px;
+        }
+
+        select {
+            width: 300px;
+        }
+
+        button {
+            background: white;
+            cursor: pointer;
+        }
+
+        #typing {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        #counter {
+            margin-top: 5px;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>📝 Form Events</h1>
+
+    <form id="myForm">
+
+        <input
+            type="text"
+            id="textInput"
+            placeholder="Type something..."
+        >
+
+        <select id="mySelect">
+            <option value="">Select an option</option>
+            <option value="HTML">Do you need an interactive site</option>
+            <option value="CSS">Do you want to employ me</option>
+            <option value="JavaScript">I am 100% good at creating site</option>
+            <option value="Python">NO DISAPPOINTMENT</option>
+        </select>
+
+        <button type="submit">
+            Submit Form
+        </button>
+
+        <button type="button" id="resetButton">
+            Reset Form
+        </button>
+
+    </form>
+
+    <!-- Typing message -->
+    <div id="typing"></div>
+
+    <!-- Character counter -->
+    <div id="counter">
+        0 / 8 characters
+    </div>
+
+
+    <script>
+
+        const form = document.getElementById("myForm");
+        const textInput = document.getElementById("textInput");
+        const mySelect = document.getElementById("mySelect");
+        const typing = document.getElementById("typing");
+        const counter = document.getElementById("counter");
+        const resetButton = document.getElementById("resetButton");
+
+
+        let typingTimer;
+
+
+        // When the person types
+        textInput.addEventListener("input", function () {
+
+            // Show Typing...
+            typing.textContent = "Typing...";
+
+
+            // Count the characters
+            let numberOfCharacters = textInput.value.length;
+
+
+            // Display the counting text
+            counter.textContent =
+                numberOfCharacters + " / 8 characters";
+
+
+            // Remove Typing... after 1 second
+            clearTimeout(typingTimer);
+
+            typingTimer = setTimeout(function () {
+                typing.textContent = "";
+            }, 1000);
+
+        });
+
+
+        // When Submit Form is clicked
+        form.addEventListener("submit", function (event) {
+
+            // Stop normal form submission
+            event.preventDefault();
+
+
+            let text = textInput.value.trim();
+
+
+            // FIRST: Check if it has 8 characters
+            if (text.length < 8) {
+
+                alert("Please form should be 8 characters.");
+
+                return;
+            }
+
+
+            // SECOND: Check if an option was selected
+            if (mySelect.value === "") {
+
+                alert("Please select an option.");
+
+                return;
+            }
+
+
+            // If everything is correct
+            alert("Form submitted successfully!");
+
+        });
+
+
+        // Reset button
+        resetButton.addEventListener("click", function () {
+
+            form.reset();
+
+            typing.textContent = "";
+
+            counter.textContent = "0 / 8 characters";
+
+            clearTimeout(typingTimer);
+
+        });
+
+    </script>
+
+</body>
+</html>
+    <script src="scripts.js"></script>
+
+
+
+</body>
+</html>
